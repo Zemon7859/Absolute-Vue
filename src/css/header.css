@@ -1,0 +1,129 @@
+header {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #FFF;
+  z-index: 1030;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.08), 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+header .brand {
+  /*width: 250px;*/
+  float: left;
+  height: 60px;
+  margin-right: 10px;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+header .brand .vue-a {
+  display: block;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  padding-left: 20px;
+  font-size: 17px;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+header .brand span {
+  display: block;
+  width: 60px;
+  height: 60px;
+  float: right;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+
+header .auth {
+  height: 60px;
+  line-height: 60%;
+  float: right;
+  margin-right: 15px;
+}
+
+header .auth:hover {
+  background: #f7f7f7;
+}
+
+header .auth > li {
+  position: relative;
+}
+
+header .auth.active {
+  background: #f7f7f7;
+}
+
+header .auth .vue-a {
+  display: block;
+  padding: 15px;
+}
+
+header .auth .vue-a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+header .auth .vue-a {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+header .auth .vue-a span {
+  padding-left: 15px;
+}
+
+header .auth .vue-a:hover span {
+  color: #222;
+}
+
+.auth ul.dropdown-menu {
+  padding: 0;
+  border-radius: 2px;
+  position: absolute;
+  left: auto !important;
+  right: 0;
+  min-width: 160px;
+  margin-top: -2px;
+  border-top: 3px solid transparent;
+  border-top-color: #3498db;
+}
+
+.auth ul.dropdown-menu::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  right: 11px;
+  bottom: 100%;
+  border-width: 0 10px 10px;
+  border-bottom-color: #4a89dc;
+}
+
+.auth ul.dropdown-menu li.list-group-item {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #e7e7e7;
+  padding: 0;
+}
+
+.auth ul.dropdown-menu li.list-group-item:hover .vue-a {
+  color: #595959;
+  background-color: #f5f5f5;
+}
+
+.auth ul.dropdown-menu li.list-group-item .vue-a {
+  padding: 12px;
+  line-height: 1.49;
+}

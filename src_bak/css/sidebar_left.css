@@ -1,0 +1,35 @@
+#sidebar-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+  width: 250px;
+  height: 100%;
+  background: #4c4a49;
+}
+
+.sidebar-left-content {
+  height: 100%;
+}
+
+.sidebar-widget {
+  padding: 8px 13px;
+  position: relative;
+  height: 51px;
+}
+
+.sidebar-widget.author-widget {
+  margin-top: 15px;
+}
+
+.media-left {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 10px;
+}
+
+.media-left img {
+  max-width: 40px;
+  border: 2px solid #888;
+  border-radius: 50%;
+}

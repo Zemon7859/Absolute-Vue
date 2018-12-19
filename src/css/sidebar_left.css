@@ -1,0 +1,146 @@
+#sidebar-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+  width: 250px;
+  height: 100%;
+  background: #4c4a49;
+  font-size: 13px;
+  color: #dfdfdf;
+  overflow: hidden;
+}
+
+
+.sidebar-left-content {
+  height: 100%;
+  width: 250px;
+}
+
+.sidebar-widget {
+  padding: 8px 13px;
+  position: relative;
+  height: 51px;
+}
+
+.sidebar-widget.author-widget {
+  margin-top: 15px;
+}
+
+.media-left, .media-right, .media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-left {
+  padding-right: 10px;
+}
+
+.media-left img {
+  max-width: 40px;
+  border: 2px solid #888;
+  border-radius: 50%;
+}
+
+.sidebar-widget.author-widget .media-body * {
+  color: #dfdfdf;
+}
+
+.sidebar-widget.author-widget .media-links .vue-a {
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #AAA;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nav.sidebar-menu > li,
+.nav.sidebar-menu > li > ul.sub-nav > li {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.sidebar-menu .sidebar-label {
+  text-transform: uppercase;
+  color: #908885;
+  font-weight: 600;
+  padding-left: 18px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+
+.sidebar-menu > li > .vue-a,
+.sidebar-menu > li > ul.sub-nav .vue-a {
+  padding: 0;
+  display: block;
+  height: 37px;
+  line-height: 37px;
+  position: relative;
+}
+
+.sidebar-menu > li > .vue-a * {
+  color: #dfdfdf;
+}
+
+.sidebar-menu > li > .vue-a i,
+.sidebar-menu > li > ul.sub-nav .vue-a i{
+  display: block;
+  float: left;
+  top: 0;
+  line-height: 37px;
+  width: 38px;
+  height: 37px;
+  font-size: 13px;
+  text-align: center;
+  padding-left: 13px;
+}
+
+.sidebar-menu > li .vue-a:hover span.sidebar-title {
+  color: #fff;
+}
+
+.sidebar-menu > li.active {
+  border-left: 3px solid #3498db;
+}
+
+.sidebar-menu > li.active > .vue-a i,
+.sidebar-menu > li.active > .vue-a span.sidebar-title {
+  color: #3498db;
+}
+
+.sidebar-menu > li > .vue-a span.sidebar-title,
+.sidebar-menu > li > ul.sub-nav .vue-a span.sidebar-title {
+  display: inline-block;
+  padding-left: 6px;
+  height: 37px;
+  line-height: 37px;
+}
+
+.sidebar-menu > li > .vue-a span.sidebar-title-tray,
+.sidebar-menu > li > .vue-a span.angle,
+.sidebar-menu > li > ul.sub-nav .vue-a span.sidebar-title-tray,
+.sidebar-menu > li > ul.sub-nav .vue-a span.angle {
+  position: absolute;
+  right: 13px;
+}
+
+.sidebar-menu > li > .vue-a.accordion-toggle span.angle i {
+  font-size: 16px;
+  font-weight: 600;
+  color: #858483;
+}
+
+.sidebar-menu > li > ul.sub-nav .vue-a {
+  padding: 0 11px;
+}
+
+.sidebar-menu > li > ul.sub-nav i,
+.sidebar-menu > li > ul.sub-nav span.sidebar-title {
+  color: #aaa;
+}
+
+
+
+
