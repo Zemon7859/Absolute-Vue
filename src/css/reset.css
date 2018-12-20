@@ -31,6 +31,8 @@ html, body {
 #content-wrap {
   padding-top: 60px;
   margin-left: 250px;
+  position: relative;
+  z-index: 0;
 }
 
 .pt20 {

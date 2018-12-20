@@ -1,3 +1,4 @@
 export default {
-  showSideBar: true
+  showSideBar: true,
+  sideBarSize: 'big'
 }

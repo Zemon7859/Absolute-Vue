@@ -3,18 +3,23 @@
   top: 0;
   left: 0;
   padding-top: 60px;
-  width: 250px;
+  /*width: 250px;*/
   height: 100%;
   background: #4c4a49;
   font-size: 13px;
   color: #dfdfdf;
-  overflow: hidden;
+  z-index: 9;
+  /*overflow: hidden;*/
 }
-
 
 .sidebar-left-content {
   height: 100%;
   width: 250px;
+}
+
+.sidebar-left-small {
+  height: 100%;
+  width: 60px;
 }
 
 .sidebar-widget {
@@ -85,7 +90,7 @@
 }
 
 .sidebar-menu > li > .vue-a i,
-.sidebar-menu > li > ul.sub-nav .vue-a i{
+.sidebar-menu > li > ul.sub-nav .vue-a i {
   display: block;
   float: left;
   top: 0;
@@ -141,6 +146,41 @@
   color: #aaa;
 }
 
+.sidebar-left-small > ul > li {
+  text-align: center;
+  padding: 7px 0;
+  position: relative;
+}
 
+.sidebar-left-small > ul li span {
+  display: block;
+  width: 100%;
+  line-height: 37px;
+  cursor: pointer;
+}
+
+.sidebar-left-small > ul li i {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+}
+
+
+.sidebar-left-small > ul li > ul.small-sub {
+  position: absolute;
+  left: 100%;
+  top: 7px;
+}
+
+.sidebar-left-small > ul li > ul.small-sub li .vue-a {
+  display: block;
+  width: 100%;
+  background: #454241;
+  color: #fff;
+  height: 37px;
+  line-height: 37px;
+  position: relative;
+  padding: 0 15px;
+}
 
 

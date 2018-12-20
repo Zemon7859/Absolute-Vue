@@ -1,7 +1,7 @@
 <template>
   <transition name="sidebar">
-    <aside id="sidebar-left" v-if="showSideBar">
-      <div class="sidebar-left-content">
+    <aside id="sidebar-left">
+      <div class="sidebar-left-content" v-if="showSideBar">
         <div class="sidebar-widget author-widget">
           <div class="media">
             <a href="/" class="media-left">
@@ -56,6 +56,42 @@
           </li>
         </ul>
       </div>
+      <div class="sidebar-left-small" v-if="!showSideBar">
+        <ul>
+          <li>
+            <span  @mouseenter="enter('message')" @mouseleave="leave">
+              <i class="fa fa-envelope-open-o"></i>
+            </span>
+            <ul class="small-sub" v-if="activedSubNavName === 'message'">
+              <li @mouseenter="enter('message')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Message</router-link>
+              </li>
+              <li @mouseenter="enter('message')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Test</router-link>
+              </li>
+              <li @mouseenter="enter('message')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Score</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span  @mouseenter="enter('message1')" @mouseleave="leave">
+              <i class="fa fa-bar-chart"></i>
+            </span>
+            <ul class="small-sub" v-if="activedSubNavName === 'message1'">
+              <li @mouseenter="enter('message1')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Message</router-link>
+              </li>
+              <li @mouseenter="enter('message1')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Test</router-link>
+              </li>
+              <li @mouseenter="enter('message1')" @mouseleave="leave">
+                <router-link class="vue-a" to="/">Score</router-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </aside>
   </transition>
 </template>
@@ -68,7 +104,8 @@ export default {
     return {
       showSubNav: {
         menu1: true
-      }
+      },
+      activedSubNavName: ''
     }
   },
   computed: mapState([
@@ -80,7 +117,13 @@ export default {
     },
     ...mapMutations([
       'CHANGE_SIDEBAR'
-    ])
+    ]),
+    enter: function (name) {
+      this.activedSubNavName = name
+    },
+    leave: function () {
+      this.activedSubNavName = ''
+    }
   }
 }
 </script>
