@@ -5,7 +5,7 @@
     <div id="editor">
       <p></p>
     </div>
-    <div id="submit" @click="getData">保存</div>
+    <el-button type="primary">保存</el-button>
   </div>
 </template>
 
@@ -46,11 +46,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   #editor {
     border: 1px solid var(--ck-color-toolbar-border);
     min-height: 600px;
     max-width: 980px;
+    margin-bottom: 1em;
   }
 
   #toolbar-container {

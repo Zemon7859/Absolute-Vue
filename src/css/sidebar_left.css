@@ -106,12 +106,12 @@
   color: #fff;
 }
 
-.sidebar-menu > li.active {
+.sidebar-menu li.actived {
   border-left: 3px solid #3498db;
 }
 
-.sidebar-menu > li.active > .vue-a i,
-.sidebar-menu > li.active > .vue-a span.sidebar-title {
+.sidebar-menu li.actived > .vue-a i,
+.sidebar-menu li.actived > .vue-a span.sidebar-title {
   color: #3498db;
 }
 

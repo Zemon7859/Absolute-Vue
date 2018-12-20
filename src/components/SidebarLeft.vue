@@ -19,7 +19,7 @@
         </div>
         <ul class="nav sidebar-menu">
           <li class="sidebar-label pt20">Label</li>
-          <li class="active">
+          <li :class="{actived: actived=== 'message'}" @click="changeActived('message')">
             <router-link class="vue-a" to="/">
               <i class="fa fa-envelope-open-o"></i>
               <span class="sidebar-title">Message</span>
@@ -39,16 +39,16 @@
             </a>
             <transition name="popup">
               <ul class="sub-nav" v-if="showSubNav.menu1">
-                <li>
+                <li :class="{actived: actived=== 'message1'}" @click="changeActived('message1')">
                   <router-link class="vue-a" to="/">
                     <i class="fa fa-bar-chart"></i>
-                    <span class="sidebar-title">{{showSubNav.menu1}}</span>
+                    <span class="sidebar-title">Message1</span>
                   </router-link>
                 </li>
               </ul>
             </transition>
           </li>
-          <li>
+          <li :class="{actived: actived=== 'message2'}" @click="changeActived('message2')">
             <router-link class="vue-a" to="/">
               <i class="fa fa-bar-chart"></i>
               <span class="sidebar-title">站点统计</span>
@@ -103,9 +103,10 @@ export default {
   data () {
     return {
       showSubNav: {
-        menu1: true
+        menu1: false
       },
-      activedSubNavName: ''
+      activedSubNavName: '',
+      actived: 'message'
     }
   },
   computed: mapState([
@@ -123,6 +124,9 @@ export default {
     },
     leave: function () {
       this.activedSubNavName = ''
+    },
+    changeActived: function (activeName) {
+      this.actived = activeName
     }
   }
 }
