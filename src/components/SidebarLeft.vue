@@ -136,12 +136,12 @@ export default {
   @import "../css/sidebar_left.css";
 
   .popup-enter-active, .popup-leave-active {
-    transition: popup-show 0s ease-in;
+    transition: popup-show 0s;
   }
 
   .popup-enter, .popup-leave-to /* .popup-leave-active below version 2.1.8 */
   {
-    transition: popup-hide 0s ease-in;
+    transition: popup-hide 0s;
   }
 
   @keyframes popup-show {

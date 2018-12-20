@@ -6,7 +6,7 @@
           <b>Absolute</b>
           Admin
         </router-link>
-        <span class="fa fa-bars" v-on:click="CHANGE_SIDEBAR"></span>
+        <span class="fa fa-bars" ref="sidebar_btn" @click="CHANGE_SIDEBAR"></span>
       </div>
     </transition>
     <ul class="auth">
@@ -39,6 +39,11 @@ import {mapState, mapMutations} from 'vuex'
 
 export default {
   name: 'top-header',
+  data () {
+    return {
+      screenType: ''
+    }
+  },
   computed: mapState([
     'showSideBar'
   ]),
@@ -46,6 +51,26 @@ export default {
     ...mapMutations([
       'CHANGE_SIDEBAR'
     ])
+  },
+  mounted: function () {
+    const _this = this
+    _this.screenType = window.innerWidth <= 1080 ? 'small' : 'big'
+    if (window.innerWidth <= 1080 && _this.screenType === 'big') {
+      _this.screenType = 'small'
+      _this.$refs.sidebar_btn.click()
+    } else if (window.innerWidth > 1080 && _this.screenType === 'small') {
+      _this.screenType = 'big'
+      _this.$refs.sidebar_btn.click()
+    }
+    window.onresize = function () {
+      if (window.innerWidth <= 1080 && _this.screenType === 'big') {
+        _this.screenType = 'small'
+        _this.$refs.sidebar_btn.click()
+      } else if (window.innerWidth > 1080 && _this.screenType === 'small') {
+        _this.screenType = 'big'
+        _this.$refs.sidebar_btn.click()
+      }
+    }
   }
 }
 </script>

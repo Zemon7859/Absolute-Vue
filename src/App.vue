@@ -25,35 +25,37 @@ export default {
 </script>
 
 <style>
-@import "css/reset.css";
-#content-wrap {
-  padding: 80px 20px 20px;
-}
-section.full {
-  animation: full .5s;
-  animation-fill-mode: forwards;
-}
+  @import "css/reset.css";
 
-section.unfull {
-  animation: unfull .5s;
-  animation-fill-mode: forwards;
-}
+  #content-wrap {
+    padding: 80px 20px 20px;
+  }
 
-@keyframes full {
-  0% {
-    margin-left: 250px;
+  section.full {
+    animation: full .5s;
+    animation-fill-mode: forwards;
   }
-  100% {
-    margin-left: 60px;
-  }
-}
 
-@keyframes unfull {
-  0% {
-    margin-left: 60px;
+  section.unfull {
+    animation: unfull .5s;
+    animation-fill-mode: forwards;
   }
-  100% {
-    margin-left: 250px;
+
+  @keyframes full {
+    0% {
+      margin-left: 250px;
+    }
+    100% {
+      margin-left: 60px;
+    }
   }
-}
+
+  @keyframes unfull {
+    0% {
+      margin-left: 60px;
+    }
+    100% {
+      margin-left: 250px;
+    }
+  }
 </style>
