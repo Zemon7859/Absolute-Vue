@@ -21,35 +21,67 @@
           <li class="sidebar-label pt20">Label</li>
           <li :class="{actived: actived=== 'message'}" @click="changeActived('message')">
             <router-link class="vue-a" to="/">
-              <i class="fa fa-envelope-open-o"></i>
-              <span class="sidebar-title">Message</span>
+              <i class="fa fa-user-circle-o"></i>
+              <span class="sidebar-title">我的信息</span>
               <span class="sidebar-title-tray">
               <span class="tag new">News</span>
             </span>
             </router-link>
           </li>
           <li>
-            <a href="javascript:void(0)" class="vue-a accordion-toggle" v-on:click="showThisSubNav('menu1')">
-              <i class="fa fa-envelope-open-o"></i>
-              <span class="sidebar-title">Admin Plugins</span>
+            <a href="javascript:void(0)" class="vue-a accordion-toggle" v-on:click="showThisSubNav('hot')">
+              <i class="fa fa-file-text-o"></i>
+              <span class="sidebar-title">热点管理</span>
               <span class="angle">
               <!--<i class="fa fa-angle-right"></i>-->
-              <i v-bind:class="{fa: true, 'fa-angle-right': !showSubNav.menu1, 'fa-angle-down': showSubNav.menu1}"></i>
+              <i v-bind:class="{fa: true, 'fa-angle-right': showSubNav !== 'hot', 'fa-angle-down': showSubNav === 'hot'}"></i>
             </span>
             </a>
             <transition name="popup">
-              <ul class="sub-nav" v-if="showSubNav.menu1">
-                <li :class="{actived: actived=== 'message1'}" @click="changeActived('message1')">
-                  <router-link class="vue-a" to="/">
-                    <i class="fa fa-bar-chart"></i>
-                    <span class="sidebar-title">Message1</span>
+              <ul class="sub-nav" v-if="showSubNav === 'hot'">
+                <li :class="{actived: actived=== 'hot_add'}" @click="changeActived('hot_add')">
+                  <router-link class="vue-a" to="/hot_add">
+                    <i class="fa"></i>
+                    <span class="sidebar-title">添加热点</span>
+                  </router-link>
+                </li>
+                <li :class="{actived: actived=== 'hot_manage'}" @click="changeActived('hot_manage')">
+                  <router-link class="vue-a" to="/hot_manage">
+                    <i class="fa"></i>
+                    <span class="sidebar-title">用户编辑</span>
+                  </router-link>
+                </li>
+              </ul>
+            </transition>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="vue-a accordion-toggle" v-on:click="showThisSubNav('user_manage')">
+              <i class="fa fa-group"></i>
+              <span class="sidebar-title">用户管理</span>
+              <span class="angle">
+              <!--<i class="fa fa-angle-right"></i>-->
+              <i v-bind:class="{fa: true, 'fa-angle-right': showSubNav !== 'user_manage', 'fa-angle-down': showSubNav === 'user_manage'}"></i>
+            </span>
+            </a>
+            <transition name="popup">
+              <ul class="sub-nav" v-if="showSubNav === 'user_manage'">
+                <li :class="{actived: actived=== 'user_add'}" @click="changeActived('user_add')">
+                  <router-link class="vue-a" to="/user_add">
+                    <i class="fa"></i>
+                    <span class="sidebar-title">添加用户</span>
+                  </router-link>
+                </li>
+                <li :class="{actived: actived=== 'user_editor'}" @click="changeActived('user_editor')">
+                  <router-link class="vue-a" to="/user_editor">
+                    <i class="fa"></i>
+                    <span class="sidebar-title">用户编辑</span>
                   </router-link>
                 </li>
               </ul>
             </transition>
           </li>
           <li :class="{actived: actived=== 'message2'}" @click="changeActived('message2')">
-            <router-link class="vue-a" to="/">
+            <router-link class="vue-a" to="/chart">
               <i class="fa fa-bar-chart"></i>
               <span class="sidebar-title">站点统计</span>
             </router-link>
@@ -102,9 +134,7 @@ export default {
   name: 'sidebar-left',
   data () {
     return {
-      showSubNav: {
-        menu1: false
-      },
+      showSubNav: 'menu1',
       activedSubNavName: '',
       actived: 'message'
     }
@@ -113,8 +143,12 @@ export default {
     'showSideBar'
   ]),
   methods: {
-    showThisSubNav: function (thisSubNav) {
-      this.showSubNav[thisSubNav] = !this.showSubNav[thisSubNav]
+    showThisSubNav: function (menuName) {
+      if (this.showSubNav === menuName) {
+        this.showSubNav = ''
+      } else {
+        this.showSubNav = menuName
+      }
     },
     ...mapMutations([
       'CHANGE_SIDEBAR'
